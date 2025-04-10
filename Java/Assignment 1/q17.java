@@ -4,8 +4,10 @@ class Solution {
     public void display() {
         
         for(int i = 50; i <= 100; i ++) {
-            if(isPrime(i)){
-                System.out.print(i + " ");
+            if(i % 2 == 1) { // for checking if it's odd
+                if(isPrime(i)){ // checking if it's prime
+                    System.out.print(i + " ");
+                }
             } 
         }
     }
