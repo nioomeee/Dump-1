@@ -14,3 +14,6 @@ INSERT INTO Product VALUES ('P103', 'Cream', 75, 'Ponds', TO_DATE('2022-08-01', 
 INSERT INTO Product VALUES ('P105', 'Lotion', 150, 'Nivea', TO_DATE('2023-03-01', 'YYYY-MM-DD'), TO_DATE('2025-03-01', 'YYYY-MM-DD'));
 
 SELECT * FROM Product;
+
+-- to create new table [product_new] without copying any data 
+-- {CREATE TABLE Product_new AS SELECT * FROM Product WHERE 1=2;}
