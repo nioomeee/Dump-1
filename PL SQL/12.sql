@@ -1,18 +1,21 @@
--- prime number check
+-- prime number check Generate All Prime Numbers from 1 to 100
 DECLARE
-    num1 NUMBER := 13;
     isPrime BOOLEAN := TRUE;
 BEGIN
-    FOR i in 2 .. num1/2 LOOP
-        IF MOD(num1 , i) = 0 THEN
-            isPrime := FALSE;
-        END IF;
-    END LOOP;
+    FOR i in 2 .. 100 LOOP
+        isPrime := TRUE;
 
-    IF isPrime = TRUE THEN
-        DBMS_OUTPUT.PUT_LINE(num1 || ' is a prime number');
-    ELSE
-        DBMS_OUTPUT.PUT_LINE(num1 || ' is not a prime number');
-    END IF;
+        FOR j in 2 .. TRUNC(SQRT(i)) LOOP
+            IF MOD(i, j) = 0 THEN
+                isPrime := FALSE;
+                EXIT;
+            END IF;
+        END LOOP;
+
+        IF isPrime = TRUE THEN
+            DBMS_OUTPUT.PUT_LINE(i);
+        END IF;
+        
+    END LOOP;
 END;
 /
